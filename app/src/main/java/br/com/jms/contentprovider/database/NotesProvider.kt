@@ -65,7 +65,7 @@ class NotesProvider : ContentProvider() {
             mUriMatcher.match(uri) == NOTES_BY_ID -> {
                 val db: SQLiteDatabase = dbHelper.writableDatabase
                 val cursor = db.query(TABLE_NOTES, projection, "$_ID = ?", arrayOf(uri.lastPathSegment), null, null, sortOrder)
-                cursor.setNotificationUri((context as Context).contentResolver, uri)
+                cursor.setNotificationUri(context?.contentResolver, uri)
                 cursor
             }
             else -> {
