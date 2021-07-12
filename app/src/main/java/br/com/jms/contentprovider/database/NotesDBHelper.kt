@@ -4,6 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.os.Build.ID
+import android.provider.BaseColumns._ID
 
 class NotesDBHelper(
     context: Context
@@ -11,7 +12,7 @@ class NotesDBHelper(
 
     override fun onCreate(db: SQLiteDatabase?) {
        db?.execSQL("CREATE TABLE $TABLE_NOTES (" +
-               "$ID INTEGER NOT NULL PRIMARY KEY, " +
+               "$_ID INTEGER NOT NULL PRIMARY KEY, " +
                "$TITLE_NOTES TEXT NOT NULL, " +
                "$DESCRIPTION_NOTES TEXT NOT NULL)")
     }
