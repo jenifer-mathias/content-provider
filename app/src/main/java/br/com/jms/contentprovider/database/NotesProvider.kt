@@ -95,7 +95,6 @@ class NotesProvider : ContentProvider() {
 
         val BASE_URI = Uri.parse("content://$AUTHORITY")
         val URI_NOTES = Uri.withAppendedPath(BASE_URI, "notes")
-        // "content://br.com.jms.contentprovider.provider.provider/notes"
 
         const val NOTES = 1
         const val NOTES_BY_ID = 2
