@@ -1,4 +1,4 @@
-package br.com.jms.contentprovider
+package br.com.jms.contentprovider.presentation
 
 import android.database.Cursor
 import android.net.Uri
@@ -9,11 +9,12 @@ import androidx.loader.app.LoaderManager
 import androidx.loader.content.CursorLoader
 import androidx.loader.content.Loader
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import br.com.jms.contentprovider.utils.NoteClickedListener
+import br.com.jms.contentprovider.presentation.detail.NotesDetailFragment
+import br.com.jms.contentprovider.R
 import br.com.jms.contentprovider.database.NotesAdapter
 import br.com.jms.contentprovider.database.NotesDBHelper.Companion.TITLE_NOTES
 import br.com.jms.contentprovider.database.NotesProvider.Companion.URI_NOTES
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<Cursor> {

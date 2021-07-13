@@ -1,4 +1,4 @@
-package br.com.jms.contentprovider
+package br.com.jms.contentprovider.utils
 
 import android.database.Cursor
 

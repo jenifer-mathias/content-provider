@@ -1,4 +1,4 @@
-package br.com.jms.contentprovider
+package br.com.jms.contentprovider.presentation.detail
 
 import android.app.Activity
 import android.app.AlertDialog
@@ -9,10 +9,10 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.EditText
 import androidx.fragment.app.DialogFragment
+import br.com.jms.contentprovider.R
 import br.com.jms.contentprovider.database.NotesDBHelper.Companion.DESCRIPTION_NOTES
 import br.com.jms.contentprovider.database.NotesDBHelper.Companion.TITLE_NOTES
 import br.com.jms.contentprovider.database.NotesProvider.Companion.URI_NOTES
-import kotlinx.android.synthetic.main.note_detail.*
 
 class NotesDetailFragment : DialogFragment(), DialogInterface.OnClickListener {
 

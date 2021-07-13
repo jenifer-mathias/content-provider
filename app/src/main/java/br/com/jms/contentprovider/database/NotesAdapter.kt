@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import br.com.jms.contentprovider.NoteClickedListener
+import br.com.jms.contentprovider.utils.NoteClickedListener
 import br.com.jms.contentprovider.R
 import br.com.jms.contentprovider.database.NotesDBHelper.Companion.DESCRIPTION_NOTES
 import br.com.jms.contentprovider.database.NotesDBHelper.Companion.TITLE_NOTES
