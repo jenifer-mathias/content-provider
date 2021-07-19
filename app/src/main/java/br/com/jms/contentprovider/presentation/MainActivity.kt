@@ -2,24 +2,24 @@ package br.com.jms.contentprovider.presentation
 
 import android.database.Cursor
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.BaseColumns._ID
+import androidx.appcompat.app.AppCompatActivity
 import androidx.loader.app.LoaderManager
 import androidx.loader.content.CursorLoader
 import androidx.loader.content.Loader
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.jms.contentprovider.utils.NoteClickedListener
-import br.com.jms.contentprovider.presentation.detail.NotesDetailFragment
 import br.com.jms.contentprovider.R
 import br.com.jms.contentprovider.database.NotesAdapter
 import br.com.jms.contentprovider.database.NotesDBHelper.Companion.TITLE_NOTES
 import br.com.jms.contentprovider.database.NotesProvider.Companion.URI_NOTES
+import br.com.jms.contentprovider.presentation.detail.NotesDetailFragment
+import br.com.jms.contentprovider.utils.NoteClickedListener
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<Cursor> {
 
-    lateinit var adapter : NotesAdapter
+    lateinit var adapter: NotesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,10 +56,12 @@ class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<Cursor> 
         CursorLoader(this, URI_NOTES, null, null, null, TITLE_NOTES)
 
     override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
-        if (data != null) { adapter.setCursor(data) }
+        if (data != null) {
+            adapter.setCursor(data)
+        }
     }
 
     override fun onLoaderReset(loader: Loader<Cursor>) {
-       adapter.setCursor(null)
+        adapter.setCursor(null)
     }
 }
