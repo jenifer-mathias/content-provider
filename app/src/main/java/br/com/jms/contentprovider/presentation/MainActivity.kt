@@ -15,6 +15,7 @@ import br.com.jms.contentprovider.database.NotesDBHelper.Companion.TITLE_NOTES
 import br.com.jms.contentprovider.database.NotesProvider.Companion.URI_NOTES
 import br.com.jms.contentprovider.presentation.detail.NotesDetailFragment
 import br.com.jms.contentprovider.utils.NoteClickedListener
+import br.com.jms.contentprovider.utils.showNotification
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<Cursor> {
@@ -50,6 +51,10 @@ class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<Cursor> 
         notes_recycler.adapter = adapter
 
         LoaderManager.getInstance(this).initLoader(0, null, this)
+
+        bt_send_notification.setOnClickListener {
+            this.showNotification("1234","Android with Kotlin", "Hi there!")
+        }
     }
 
     override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> =
