@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<Cursor> 
         LoaderManager.getInstance(this).initLoader(0, null, this)
 
         bt_send_notification.setOnClickListener {
-            this.showNotification("1234","Android with Kotlin", "Hi there!")
+            this.showNotification("1234", "Android with Kotlin", "Hi there!")
         }
     }
 
