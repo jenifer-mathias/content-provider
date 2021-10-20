@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/light_purple">
 
         <LinearLayout
             android:id="@+id/note_text_container"
@@ -25,12 +26,14 @@
                 android:id="@+id/tx_note_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/tx_note_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:textSize="16sp"/>
 
         </LinearLayout>
