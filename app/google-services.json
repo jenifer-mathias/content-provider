@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "979540782528",
+    "project_id": "content-provider-jms",
+    "storage_bucket": "content-provider-jms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979540782528:android:28e74729b520243d5a6c25",
+        "android_client_info": {
+          "package_name": "br.com.jms.contentprovider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979540782528-hjblkrusr4frnfltdi37sr610f7ionvq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNwvynEP1Pm7oRvWWPWk1QwEjyL3n7vUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979540782528-hjblkrusr4frnfltdi37sr610f7ionvq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
