@@ -1,9 +1,11 @@
 package br.com.jms.contentprovider.presentation
 
+import android.annotation.SuppressLint
 import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
 import android.provider.BaseColumns._ID
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.loader.app.LoaderManager
 import androidx.loader.content.CursorLoader
@@ -16,11 +18,17 @@ import br.com.jms.contentprovider.database.NotesProvider.Companion.URI_NOTES
 import br.com.jms.contentprovider.presentation.detail.NotesDetailFragment
 import br.com.jms.contentprovider.utils.NoteClickedListener
 import br.com.jms.contentprovider.utils.showNotification
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.activity_main.*
+import android.text.TextUtils
 
 class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<Cursor> {
 
     lateinit var adapter: NotesAdapter
+
+    companion object {
+        const val TAG_TOKEN_FIREBASE = "NEW_TOKEN"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,13 +41,14 @@ class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<Cursor> 
 
         adapter = NotesAdapter(object : NoteClickedListener {
 
+            @SuppressLint("Range")
             override fun noteClickedItem(cursor: Cursor) {
                 val id = cursor.getLong(cursor.getColumnIndex(_ID))
                 val fragment = NotesDetailFragment.newInstance(id)
                 fragment.show(supportFragmentManager, "dialog")
-
             }
 
+            @SuppressLint("Range")
             override fun noteRemoveItem(cursor: Cursor?) {
                 val id = cursor?.getLong(cursor.getColumnIndex(_ID))
                 contentResolver.delete(Uri.withAppendedPath(URI_NOTES, id.toString()), null, null)
@@ -55,6 +64,12 @@ class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<Cursor> 
 
         bt_send_notification.setOnClickListener {
             this.showNotification("1234", "Android with Kotlin", "Hi there!")
+        }
+
+        FirebaseMessaging.getInstance().token.addOnSuccessListener { token: String ->
+            if (!TextUtils.isEmpty(token)) {
+                Log.d(TAG_TOKEN_FIREBASE,token)
+            }
         }
     }
 
