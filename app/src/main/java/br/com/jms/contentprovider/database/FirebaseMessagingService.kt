@@ -5,7 +5,7 @@ import br.com.jms.contentprovider.utils.showNotification
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
-class MyFirebaseMessagingService : FirebaseMessagingService() {
+class FirebaseMessagingService : FirebaseMessagingService() {
 
     private val tag = "FirebaseMessagingServ"
     override fun onMessageReceived(remoteMessage: RemoteMessage) {

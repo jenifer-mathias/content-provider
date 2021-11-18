@@ -14,7 +14,7 @@
         android:theme="@style/Theme.ContentProvider">
 
         <service
-            android:name=".database.MyFirebaseMessagingService"
+            android:name=".database.FirebaseMessagingService"
             android:enabled="true"
             android:exported="true">
 
